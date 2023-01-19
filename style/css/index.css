@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(7fr, 1fr);
+  grid-template-rows: minmax(auto, auto);
+  grid-template-areas: "header header header header header header header" "nav    nav     nav    nav    nav    nav    nav" "main   main    main   main   main aside aside" "main   main    main   main   main aside aside" "main   main    main   main   main aside aside" "main   main    main   main   main aside aside" "footer footer footer footer footer footer footer";
+}
+
+#stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+header {
+  grid-area: header;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+header h1 {
+  text-align: center;
+  color: #fff;
+}
+
+nav {
+  grid-area: nav;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+main {
+  grid-area: main;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+main h2 {
+  text-align: center;
+  color: #fff;
+}
+main p {
+  margin: 5px;
+  color: #fff;
+}
+
+.asideRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: aside;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  /*:::::MODAL ACTIVO:::::*/
+}
+.asideRight h2 {
+  position: relative;
+  top: -45%;
+  left: 50%;
+  color: #fff;
+}
+.asideRight .galeria {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style: none;
+  margin: 10px auto;
+  padding: 20px;
+  width: 90%;
+}
+.asideRight .galeria li {
+  margin: 5px;
+}
+.asideRight .galeria li img {
+  height: 100px;
+  width: 150px;
+}
+.asideRight .galeria li img:hover {
+  transition: 1s all;
+  border-radius: 2px 25px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.asideRight .modal {
+  display: none;
+  margin: 0;
+}
+.asideRight .modal:target {
+  background-color: rgba(0, 0, 0, 0.8);
+  display: block;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.asideRight .modal h3 {
+  color: white;
+  font-size: 30px;
+  margin: 15px 0;
+  text-align: center;
+}
+.asideRight .modal .imagen {
+  align-items: center;
+  display: flex;
+  height: 50%;
+  justify-content: center;
+  width: 100%;
+}
+.asideRight .modal .imagen a {
+  color: white;
+  font-size: 40px;
+  margin: 0 10px;
+  text-decoration: none;
+}
+.asideRight .modal .imagen a:nth-child(2) {
+  flex-shrink: 2;
+  height: 100%;
+  margin: 0px;
+}
+.asideRight .modal .imagen img {
+  border: 7px solid white;
+  box-sizing: border-box;
+  border-radius: 15px;
+  height: 100%;
+  max-width: 100%;
+  width: 500px;
+}
+.asideRight .modal .cerrar {
+  background: white;
+  border-radius: 50%;
+  color: black;
+  display: block;
+  font-size: 26px;
+  height: 40px;
+  line-height: 25px;
+  margin: 15px auto;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  width: 45px;
+}
+
+footer {
+  grid-area: footer;
+  border: 1px solid black;
+  color: #fff;
+  text-align: center;
+}
+
+#film {
+  background-color: #151b23;
+}
+
+#particulas {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.contenido {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.contenido .card {
+  width: 350px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.contenido .card .card-img {
+  width: 100%;
+  height: 250px;
+  cursor: pointer;
+}
+.contenido .card .card-img:hover {
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.1);
+}
+
+.windows-modal {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.windows-modal .windows-img {
+  height: 500px;
+  width: 70%;
+  border-radius: 5px;
+}
+.windows-modal .btn {
+  outline: none;
+  border: none;
+  padding: 1em 2em;
+  background-color: rgb(13, 172, 230);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.hidden {
+  display: none;
+}
+
+#bodyGame {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0px;
+  margin: 0px;
+  height: 100vh;
+  background: linear-gradient(0deg, rgb(97, 98, 99) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+#game {
+  box-shadow: black 20px 10px 50px;
+}
+
+h1 {
+  margin: 0px;
+  margin-bottom: 10px;
+  font-size: 2.9em;
+  font-family: Helvetica, sans-serif;
+}/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,66 @@
+
+#film{
+  background-color: #151b23;;
+}
+#particulas{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.contenido {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+  .card{
+    width: 350px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    .card-img{
+      width: 100%;
+      height: 250px;
+      cursor: pointer;
+      &:hover{
+        transition: all 0.5s ease-in-out;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+
+.windows-modal{
+  position: fixed;
+  background-color: rgba(0,0,0,0.7);
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  .windows-img{
+    height: 500px;
+    width: 70%;
+    border-radius: 5px;
+  }
+  .btn{
+    outline: none;
+    border: none;
+    padding: 1em 2em;
+    background-color: rgb(13, 172, 230);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+img{
+  object-fit: cover;
+}
+
+.hidden{
+  display: none;
+}
